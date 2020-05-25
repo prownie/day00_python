@@ -1,0 +1,22 @@
+import sys
+import re
+
+#if len(sys.argv) != 3 or not isinstance(sys.argv[1], str) or not isinstance(sys.argv[2], int):
+if len(sys.argv) != 3:
+    print("ERROR")
+    exit(0)
+if not isinstance(sys.argv[1],str):
+    print("ERRAR")
+    exit(0)
+
+print (type(sys.argv[2]))
+splitted = (re.split(r'[\W]+', sys.argv[1]))
+
+i = 0
+while i < len(splitted) - 1:
+    print("i =", i)
+    if len(test[i]) <= sys.argv[2]:
+        del test[i]
+    i += 1
+print(test)
+
