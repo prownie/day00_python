@@ -1,6 +1,6 @@
 import random
 
-rand = random.randint(1, 9)
+rand = random.randint(1, 99)
 
 print("This is an interactive guessing game!\nYou have ", end='')
 print("to enter a number between 1 and 99 to find out the secret number.")
@@ -17,6 +17,7 @@ while (int(nb) != rand):
         exit(0)
     if not nb.isdigit():
         print("Thats not a number")
+        nb = 0
     else:
         if int(nb) < rand:
             print("Too low!")

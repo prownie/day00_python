@@ -10,7 +10,7 @@ def print_recipe(name):
     if name not in cookbook:
         print("\nNot a recipe\n")
         return
-    print("\nRecipe for cake:")
+    print("\nRecipe for " + name + " :")
     print("Ingredients list: ", cookbook[name]['ingredients'])
     print("To be eaten for", cookbook[name]['meal'])
     print("Takes", cookbook[name]['prep_time'], "minutes of cooking.\n")
