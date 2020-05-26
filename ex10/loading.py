@@ -3,18 +3,23 @@ import time
 
 def ft_progress(lst):
     start_time = time.time()
+    iter_time = 0
     for i in lst:
-        print("ETA [{:.0%}]".format(i / len(lst)), end='')
-        
-        print("{:=>4.25s}".format(">"), end='')
-        print("]", "{}/{}".format(i + 1,len(lst)), end='')
+        if (i == 1):
+            iter_time = time.time() - start_time
+        print("ETA: {:5.2f}".format((len(lst) - i) * iter_time), "[", end='')
+        print("{:>4.0%}]".format(i / len(lst)), end='')
+        print(" [{:=>{}}{:{}}".format('',
+              i*25/len(lst), '>', 25 - i * 25 // len(lst)), end='')
+        print("]", "{}/{}".format(i + 1, len(lst)), end='')
         print(" | elapsed time {:.2f}s". format(time.time() - start_time))
-        yield i + 1
+        yield i
 
-listy = range(200)
+
+listy = range(100)
 ret = 0
 for elem in ft_progress(listy):
-    ret += (elem + 3) % 5
-    time.sleep(0.01)
+    ret += elem
+    time.sleep(0.005)
 print()
-print("ret =",ret)
+print("ret =", ret)
