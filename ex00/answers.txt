@@ -1,4 +1,5 @@
 1.pip list | sed 's/ (.*//'
+1.python     puis help("modules") dans l'invite de commande python
 2.pip freeze
 3.pip show numpy
 4.pip search "tesseract"
